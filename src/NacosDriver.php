@@ -143,7 +143,7 @@ class NacosDriver implements DriverInterface
             $this->config->get('services.drivers.nacos.namespace_id')
         );
 
-        if ($response->getStatusCode() === 404) {
+        if ($response->getStatusCode() === 404 || $response->getStatusCode() === 400) {
             return false;
         }
 
